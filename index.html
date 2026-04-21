@@ -3,122 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registration Form</title>
+<title>My Portfolio</title>
 
 <style>
 
+/* RESET */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI, sans-serif;
+font-family:Arial, sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-height:100vh;
+background:#f4f6ff;
+color:#333;
+}
+
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#4f46e5;
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav h2{
+letter-spacing:1px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+flex-wrap:wrap;
+}
+
+nav ul li{
+margin-left:20px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* HERO */
+.hero{
+height:90vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#667eea,#764ba2);
-}
-
-.container{
-width:100%;
-max-width:420px;
+text-align:center;
+background:linear-gradient(135deg,#6366f1,#8b5cf6);
+color:white;
 padding:20px;
 }
 
-.form-box{
-background:white;
-padding:35px;
-border-radius:15px;
-box-shadow:0 15px 35px rgba(0,0,0,0.2);
-animation:fadeIn 1s ease;
+.hero h1{
+font-size:45px;
+margin-bottom:10px;
 }
 
-.form-box h2{
-text-align:center;
-margin-bottom:25px;
-color:#444;
+.hero p{
+font-size:18px;
+margin-bottom:20px;
 }
 
-.input-group{
-margin-bottom:18px;
-}
-
-.input-group label{
-display:block;
-margin-bottom:6px;
-font-weight:500;
-color:#555;
-}
-
-.input-group input{
-width:100%;
-padding:12px;
-border-radius:8px;
-border:1px solid #ddd;
-font-size:14px;
-transition:0.3s;
-}
-
-.input-group input:focus{
-border-color:#667eea;
-outline:none;
-box-shadow:0 0 5px rgba(102,126,234,0.5);
-}
-
-button{
-width:100%;
-padding:12px;
+.hero button{
+padding:12px 25px;
 border:none;
-border-radius:8px;
-background:linear-gradient(135deg,#667eea,#764ba2);
-color:white;
-font-size:16px;
+background:white;
+color:#4f46e5;
 font-weight:bold;
+border-radius:30px;
 cursor:pointer;
+}
+
+/* SECTIONS */
+section{
+padding:70px 10%;
+text-align:center;
+}
+
+h2{
+margin-bottom:30px;
+font-size:32px;
+color:#4f46e5;
+}
+
+/* ABOUT */
+.about p{
+max-width:700px;
+margin:auto;
+line-height:1.6;
+}
+
+/* SKILLS */
+.skills-container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.skill{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+width:150px;
+font-weight:bold;
+}
+
+/* PROJECTS + YOUTUBE */
+.projects-container{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.project{
+background:white;
+padding:20px;
+border-radius:10px;
+width:300px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
-button:hover{
-transform:translateY(-2px);
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+.project:hover{
+transform:translateY(-5px);
 }
 
-.login-text{
-text-align:center;
-margin-top:18px;
-font-size:14px;
+/* THUMBNAIL IMAGE */
+.project img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
 }
 
-.login-text a{
-color:#667eea;
+/* YOUTUBE BUTTON */
+.yt-btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 15px;
+background:red;
+color:white;
 text-decoration:none;
-font-weight:500;
+border-radius:6px;
+font-weight:bold;
+transition:0.3s;
 }
 
-.login-text a:hover{
-text-decoration:underline;
+.yt-btn:hover{
+background:#cc0000;
 }
 
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+/* CONTACT */
+.contact form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
-/* Responsive */
-
-@media(max-width:500px){
-.form-box{
-padding:25px;
+.contact input,
+.contact textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
 }
+
+.contact button{
+padding:10px;
+border:none;
+background:#4f46e5;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#4f46e5;
+color:white;
+margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+}
+
+nav ul{
+justify-content:center;
+margin-top:10px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.project{
+width:100%;
+}
+
 }
 
 </style>
@@ -127,45 +229,139 @@ padding:25px;
 
 <body>
 
-<div class="container">
+<!-- NAVBAR -->
+<nav>
+<h2>MyPortfolio</h2>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#youtube">YouTube</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-<div class="form-box">
+<!-- HERO -->
+<section class="hero" id="home">
+<div>
+<h1>Hi, I'm Samra Liaqat</h1>
+<p>Web Developer | Designer | YouTuber</p>
+<button onclick="location.href='#contact'">Hire Me</button>
+</div>
+</section>
 
-<h2>Create Account</h2>
+<!-- ABOUT -->
+<section class="about" id="about">
+<h2>About Me</h2>
+<p>
+I am a passionate web developer who builds modern and responsive websites.
+I also create tutorials on YouTube to help beginners learn web development easily.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>My Skills</h2>
+
+<div class="skills-container">
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">GitHub</div>
+<div class="skill">Responsive</div>
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="projects-container">
+
+<div class="project">
+<h3>Portfolio Website</h3>
+<p>Modern responsive portfolio design.</p>
+</div>
+
+<div class="project">
+<h3>Landing Page</h3>
+<p>Creative product landing page UI.</p>
+</div>
+
+<div class="project">
+<h3>Registration Form</h3>
+<p>Beautiful responsive form design.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- YOUTUBE -->
+<!-- YOUTUBE -->
+<section id="youtube">
+<h2>My YouTube Tutorials</h2>
+
+<div class="projects-container">
+
+<div class="project">
+<img src="https://img.youtube.com/vi/4m2fgUlJSvo/maxresdefault.jpg">
+<h3>HTML Basics</h3>
+<a class="yt-btn" href="https://www.youtube.com/watch?v=4m2fgUlJSvo" target="_blank">▶ Watch Video</a>
+</div>
+
+<div class="project">
+<img src="https://img.youtube.com/vi/agy-WS8WbsA/maxresdefault.jpg">
+<h3>CSS Responsive Design</h3>
+<a class="yt-btn" href="https://www.youtube.com/watch?v=agy-WS8WbsA" target="_blank">▶ Watch Video</a>
+</div>
+
+<div class="project">
+<img src="https://img.youtube.com/vi/QO4asEl0_i0/maxresdefault.jpg">
+<h3>Portfolio Tutorial</h3>
+<a class="yt-btn" href="https://www.youtube.com/watch?v=QO4asEl0_i0" target="_blank">▶ Watch Video</a>
+</div>
+
+<div class="project">
+<img src="https://img.youtube.com/vi/LcvuMWvcKWA/maxresdefault.jpg">
+<h3>Portfolio Tutorial 2</h3>
+<a class="yt-btn" href="https://www.youtube.com/watch?v=LcvuMWvcKWA" target="_blank">▶ Watch Video</a>
+</div>
+
+<div class="project">
+<img src="https://img.youtube.com/vi/INl2Xbb-_cU/maxresdefault.jpg">
+<h3>JavaScript Basics</h3>
+<a class="yt-btn" href="https://www.youtube.com/watch?v=INl2Xbb-_cU" target="_blank">▶ Watch Video</a>
+</div>
+
+<div class="project">
+<img src="https://img.youtube.com/vi/WBtNFmalCZ8/maxresdefault.jpg">
+<h3>Advanced Portfolio</h3>
+<a class="yt-btn" href="https://www.youtube.com/watch?v=WBtNFmalCZ8" target="_blank">▶ Watch Video</a>
+</div>
+
+</div>
+
+</section>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<h2>Contact Me</h2>
 
 <form>
-
-<div class="input-group">
-<label>Full Name</label>
-<input type="text" placeholder="Enter your name" required>
-</div>
-
-<div class="input-group">
-<label>Email Address</label>
-<input type="email" placeholder="Enter your email" required>
-</div>
-
-<div class="input-group">
-<label>Password</label>
-<input type="password" placeholder="Enter password" required>
-</div>
-
-<div class="input-group">
-<label>Confirm Password</label>
-<input type="password" placeholder="Confirm password" required>
-</div>
-
-<button type="submit">Register</button>
-
-<p class="login-text">
-Already have an account? <a href="#">Login</a>
-</p>
-
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="4" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
 </form>
 
-</div>
+</section>
 
-</div>
+<!-- FOOTER -->
+<footer>
+<p>© 2026 My Portfolio | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
