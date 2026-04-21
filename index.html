@@ -3,231 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WebDimension | Team Portfolio</title>
+<title>Colorful Registration Form</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: Arial, sans-serif;
+font-family:Segoe UI, sans-serif;
 }
 
 body{
-line-height:1.6;
-background:#f4f4f4;
-}
-
-header{
-background:#222;
-color:white;
-padding:20px 0;
-text-align:center;
-}
-
-header p{
-color:#ccc;
-font-size:14px;
-margin-top:5px;
-}
-
-nav{
-margin-top:10px;
-}
-
-nav a{
-color:white;
-margin:0 15px;
-text-decoration:none;
-font-weight:bold;
-}
-
-section{
-padding:60px 20px;
-text-align:center;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#667eea,#764ba2);
 }
 
 .container{
-max-width:1100px;
-margin:auto;
-}
-
-.team{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin-top:30px;
-}
-
-.card{
-background:white;
+width:100%;
+max-width:420px;
 padding:20px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
-.card img{
-width:120px;
-height:120px;
-border-radius:50%;
-object-fit:contain;
-margin-bottom:15px;
-}
-
-.skills{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:15px;
-margin-top:20px;
-}
-
-.skill{
-background:#222;
-color:white;
-padding:10px 15px;
-border-radius:5px;
-}
-
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:30px;
-}
-
-.project{
+.form-box{
 background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+padding:35px;
+border-radius:15px;
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+animation:fadeIn 1s ease;
 }
 
-footer{
-background:#222;
-color:white;
+.form-box h2{
 text-align:center;
-padding:20px;
+margin-bottom:25px;
+color:#444;
 }
+
+.input-group{
+margin-bottom:18px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:6px;
+font-weight:500;
+color:#555;
+}
+
+.input-group input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+font-size:14px;
+transition:0.3s;
+}
+
+.input-group input:focus{
+border-color:#667eea;
+outline:none;
+box-shadow:0 0 5px rgba(102,126,234,0.5);
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.login-text{
+text-align:center;
+margin-top:18px;
+font-size:14px;
+}
+
+.login-text a{
+color:#667eea;
+text-decoration:none;
+font-weight:500;
+}
+
+.login-text a:hover{
+text-decoration:underline;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Responsive */
+
+@media(max-width:500px){
+.form-box{
+padding:25px;
+}
+}
+
 </style>
 
 </head>
 
 <body>
 
-<header>
-<h1>WebDimension</h1>
-<p>Building Modern Websites & Digital Experiences</p>
-
-<nav>
-<a href="#about">About</a>
-<a href="#team">Team</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
-<section id="about">
 <div class="container">
-<h2>About WebDimension</h2>
 
-<p>
-WebDimension is a creative team of passionate developers focused on building modern, responsive, and user-friendly web applications. Our team combines skills in front-end development, back-end programming, UI/UX design, and database management to create efficient and visually appealing digital solutions. 
+<div class="form-box">
 
-Our mission is to deliver high-quality web solutions that solve real-world problems while providing excellent user experiences. Through teamwork, innovation, and continuous learning, WebDimension strives to build reliable and impactful digital products.
+<h2>Create Account</h2>
+
+<form>
+
+<div class="input-group">
+<label>Full Name</label>
+<input type="text" placeholder="Enter your name" required>
+</div>
+
+<div class="input-group">
+<label>Email Address</label>
+<input type="email" placeholder="Enter your email" required>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" placeholder="Enter password" required>
+</div>
+
+<div class="input-group">
+<label>Confirm Password</label>
+<input type="password" placeholder="Confirm password" required>
+</div>
+
+<button type="submit">Register</button>
+
+<p class="login-text">
+Already have an account? <a href="#">Login</a>
 </p>
-</p>
 
-</div>
-</section>
-
-<section id="team">
-<div class="container">
-<h2>Meet Our Team</h2>
-
-<div class="team">
-
-<div class="card">
-<img src="https://img.freepik.com/free-vector/smiling-woman-with-glasses_1308-177859.jpg">
-<h3>Samra Liaqat</h3>
-<p>Frontend Developer</p>
-</div>
-
-<div class="card">
-<img src="https://img.freepik.com/free-vector/woman-floral-traditional-costume_1308-176159.jpg?ga=GA1.1.2022227238.1776682296&semt=ais_hybrid&w=740&q=80">
-<h3>Minaal Sarfaraz</h3>
-<p>Backend Developer</p>
-</div>
-
-<div class="card">
-<img src="https://img.freepik.com/free-vector/woman-with-braided-hair-illustration_1308-174675.jpg?ga=GA1.1.2022227238.1776682296&semt=ais_hybrid&w=740&q=80">
-<h3>Umama Saif</h3>
-<p>UI/UX Designer</p>
-</div>
-
-<div class="card">
-<img src="https://img.freepik.com/premium-vector/portrait-beautiful-lady-with-sunglasses_684058-1189.jpg">
-<h3>Mahnoor</h3>
-<p>Full Stack Developer</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<section id="skills">
-<div class="container">
-<h2>Our Skills</h2>
-
-<div class="skills">
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">PHP</div>
-<div class="skill">Database</div>
-<div class="skill">AI</div>
-</div>
-
-</div>
-</section>
-
-<section id="projects">
-<div class="container">
-<h2>Our Projects</h2>
-
-<div class="projects">
-
-<div class="project">
-<h3>Business Website</h3>
-<p>A responsive website designed for a small business to showcase services and products.</p>
-</div>
-
-<div class="project">
-<h3>Student Portfolio System</h3>
-<p>An online portfolio platform where students can display their projects and skills.</p>
-</div>
-
-<div class="project">
-<h3>Task Management App</h3>
-<p>A web application that helps users manage tasks, deadlines, and productivity.</p>
-</div>
+</form>
 
 </div>
 
 </div>
-</section>
-
-<section id="contact">
-<div class="container">
-<h2>Contact WebDimension</h2>
-<p>Email: contact@webdimension.com</p>
-<p>Phone: +92 307 8840283</p>
-</div>
-</section>
-
-<footer>
-<p>© 2026 WebDimension | All Rights Reserved</p>
-</footer>
 
 </body>
 </html>
